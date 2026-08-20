@@ -1,21 +1,33 @@
 # Ex. No: 8   Packet Tracer: Connect a Router to a LAN
-# Date: ___________
+
+# Date: 20/08/2026
+
+## NAME: SUNDARRAJAN K
+
+## REG NO: 212223060279
 ________________________________________<br>
-# Objective
+
+# Objective:
+
 Configure and verify router LAN/WAN interfaces in Cisco Packet Tracer and test end-to-end connectivity.<br>
 •	Display key router information (interfaces, status, routing table).<br>
 •	Configure IPv4 addresses and descriptions on R1 and R2 interfaces.<br>
 •	Bring interfaces up and verify with show commands and pings. <br>
 ________________________________________<br>
-# Apparatus / Tools Required
+
+# Apparatus / Tools Required:
+
 •	Cisco Packet Tracer<br>
 •	2 Routers (R1, R2 — 2911 or equivalent)<br>
 •	2 Switches (S1, S2)<br>
 •	4 PCs (PC1–PC4) with NICs<br>
 •	Copper straight-through cables for LAN links; Serial DCE/DTE cable for WAN link <br>
 ________________________________________<br>
-# Network Topology Diagram
-(Insert your Packet Tracer screenshot showing R1—S1—PC1/PC2 and R2—S2—PC3/PC4, plus R1–R2 Serial link S0/0/0.)<br>
+
+# Network Topology Diagram:
+
+<img width="1920" height="1080" alt="Screenshot 2026-08-20 140708" src="https://github.com/user-attachments/assets/87e49c17-4b7e-4469-8050-b2d2c58fbde7" />
+
 ________________________________________<br>
 Addressing Table (from activity)<br>
 Device	Interface	IP Address	Subnet Mask	Default Gateway<br>
@@ -31,8 +43,11 @@ PC3	NIC	10.1.1.10	255.255.255.0	10.1.1.1<br>
 PC4	NIC	10.1.2.10	255.255.255.0	10.1.2.1<br>
 Note (per activity): Console password = cisco; Privileged EXEC password = class. <br>
 ________________________________________<br>
-# Procedure
+
+# Procedure:
+
 # Part 1: Display Router Information (R1 shown; repeat on R2)
+
 1.	Click R1 → CLI. If prompted, use console password cisco, then enable and password class. <br>
 2.	View interface statistics (all):<br>
 3.	R1# show interfaces<br>
@@ -49,7 +64,9 @@ o	Count Serial and Ethernet ports, and check their status (up/down). <br>
 11.	R1# show ip route<br>
 o	Identify C (connected) and any dynamic routes; note how unknown networks are handled. <br>
 ________________________________________<br>
+
 # Part 2: Configure Router Interfaces
+
 R1 – LAN Interfaces<br>
 1.	Enter global config: R1# configure terminal<br>
 2.	G0/0 (LAN to S1 / VLAN with PC1)<br>
@@ -89,7 +106,9 @@ R1# copy running-config startup-config<br>
 R2# copy running-config startup-config<br>
 (Short form allowed: wr.) <br>
 ________________________________________<br>
+
 # Part 3: Verification & Testing<br>
+
 1.	Quick interface check (both routers)<br>
 2.	R1# show ip interface brief<br>
 3.	R2# show ip interface brief<br>
@@ -103,19 +122,48 @@ o	From PC1, ping PC4.<br>
 o	From R2, ping PC2.<br>
 o	You should also be able to ping all active router interfaces from the PCs. (Switches are not configured for management; you won’t ping them.) <br>
 ________________________________________<br>
-# Commands Used (summary)
+
+# Commands Used (summary):
+
 •	Mode/navigation: enable, configure terminal, end<br>
 •	Interface config: interface g0/0 | g0/1 | s0/0/0, ip address A.B.C.D M.M.M.M, description ..., no shutdown<br>
 •	DCE timing (if applicable): clock rate 64000<br>
 •	Show/verify: show interfaces, show interfaces serial 0/0/0, show interfaces g0/0, show ip interface brief, show ip route<br>
 •	Save: copy running-config startup-config / wr <br>
 ________________________________________<br>
-# Output (Attach Screenshots)
-•	show ip interface brief on R1 and R2 (after configuration)<br>
-•	show ip route on R1 and R2<br>
-•	Successful ping PC1 → PC4; R2 → PC2<br>
-•	Interface up messages after no shutdown on each link <br>
-________________________________________<br>
-# Result
-R1 and R2 were configured with correct IPv4 addresses and interface descriptions, links were brought up, routing tables showed connected networks, and end-to-end connectivity between PCs across the WAN link was verified using pings. The configurations were saved to NVRAM for persistence.<br>
 
+# Output (Attach Screenshots):
+
+•	show ip interface brief on R1 and R2 (after configuration)<br>
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0e2a6139-0d9c-422b-a956-a9385b6126b4" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/dc8a2eef-653b-43d2-84dd-96c63ff98632" />
+
+
+•	show ip route on R1 and R2<br>
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/08c66d79-f4bd-4fe1-b24e-79d5a3b9d75f" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b1bc0148-7d62-49de-85f9-73d96968d97c" />
+
+
+•	Successful ping PC1 → PC4; R2 → PC2<br>
+
+<img width="1920" height="1080" alt="Screenshot 2026-08-20 135942" src="https://github.com/user-attachments/assets/a4d154e0-b258-4b36-b60e-d1dd92d15684" />
+
+<img width="1920" height="1080" alt="Screenshot 2026-08-20 140116" src="https://github.com/user-attachments/assets/17207f51-ee48-4f2f-ae97-a07ace4ad87b" />
+
+
+•	Interface up messages after no shutdown on each link <br>
+
+<img width="1920" height="1080" alt="Screenshot 2026-08-20 140140" src="https://github.com/user-attachments/assets/84ee3f26-17d0-4dc9-ab6f-8c013b019534" />
+
+
+<img width="1920" height="1080" alt="Screenshot 2026-08-20 135307" src="https://github.com/user-attachments/assets/6b61094d-d936-4400-881d-9f4778a4187d" />
+
+________________________________________<br>
+
+# Result:
+
+R1 and R2 were configured with correct IPv4 addresses and interface descriptions, links were brought up, routing tables showed connected networks, and end-to-end connectivity between PCs across the WAN link was verified using pings. The configurations were saved to NVRAM for persistence.<br>
